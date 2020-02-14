@@ -70,3 +70,26 @@ Once done, we can now compute gCF and sCF onto the best 200-loci tree:
 		iqtree -t ufboot_sup.$k.suptree --gcf loci.$k.treefile -p alignment.nex --subsample $k --subsample-seed 1 --scf 100 --prefix concord.$k	
 	done
 	
+
+Reproducing the Figures
+-----------------------
+After completing the analyses above, the output of the analyses of all 10 datasets should be contained in a single folder, with one sub-folder for each dataset (one for the lizard dataset, a further 9 for the other 9 datasets). Each dataset folder should be named for the author and year, and in some cases the data type, as follows:
+
+* Ballesteros_2019
+* Branstetter_2017
+* Cannon_2016
+* Jarvis_2015
+* Misof_2014
+* Ran_2018_aa
+* Ran_2018_dna
+* Rodriguez_2018
+* Wu_2018_aa
+* Wu_2018_dna
+
+Once this is done, you can recreate the figures as follows. 
+
+Figure 2 in the manuscript was drawn partly in FigTree and then edited in Adobe Illustrator, so it's not possible to reproduce it with a script. 
+
+To reproduce Figure 3, use the R script `figure_3.R`[https://github.com/bqminh/concordance-factor/blob/master/scripts/figure3.R]. You will need to re-name the `base` variable to point to the parent folder of the 10 dataset folders you created above.
+
+To reproduce the supplementary figures, use the R script `make_supplementary_figures.R`[https://github.com/bqminh/concordance-factor/blob/master/scripts/make_supplementary_figures.R]. You will need to re-name the `base` variable to point to the parent folder of the 10 dataset folders you created above.
